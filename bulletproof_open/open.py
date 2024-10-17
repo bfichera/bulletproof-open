@@ -13,7 +13,7 @@ def open(file, *args, **kwargs):
         logger.warning(f'Path {path} exists! Creating new filepath {newpath}.')
         return open(newpath, *args, **kwargs)
     if not path.parent.exists():
-        path.parent.mkdir(parents=True, exist_ok=False)
+        path.parent.mkdir(parents=True, exist_ok=True)
         logger.warning(
             f'Directory path {path.parent} does not exist!'
             f' Creating new directory (including parents) {path.parent}.'
