@@ -13,7 +13,7 @@ def open(file, mode='r', buffering=-1, encoding=None,
 
     frame = inspect.currentframe()
     args, _, _, values = inspect.getargvalues(frame)
-    kwargs = {a: v for a, v in zip(args, values)}
+    kwargs = {k: values[k] for k in args}
 
     if 'w' in mode:
         path = Path(file)
